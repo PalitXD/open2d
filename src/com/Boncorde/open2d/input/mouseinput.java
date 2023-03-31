@@ -1,5 +1,8 @@
 package com.Boncorde.open2d.input;
 
+import com.Boncorde.open2d.UI.UIComponent;
+import com.Boncorde.open2d.UI.UiHandler;
+
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -39,7 +42,9 @@ public class mouseinput implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+    for(UIComponent m: UiHandler.components){
+        m.onClick(e.getX(), e.getY());
+    }
     }
 
     @Override
